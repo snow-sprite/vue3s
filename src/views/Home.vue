@@ -24,6 +24,7 @@ export default class Home extends Vue {
     mounted(){
       console.log("hello, vue3");
     }
+    
     text(){
       this.msg = (~~(Math.random() * 99 + 1)).toString();
     }
