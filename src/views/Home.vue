@@ -19,8 +19,8 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { Options, Vue } from 'vue-class-component';
+import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 @Options({
   components: {
@@ -28,10 +28,10 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
   }
 })
 export default class Home extends Vue {
-  msg = "Welcome to Your Vue.js + TypeScript App";
+  msg = 'Welcome to Your Vue.js + TypeScript App';
 
   mounted() {
-    console.log("hello, vue3");
+    console.log('hello, vue3');
   }
 
   text() {

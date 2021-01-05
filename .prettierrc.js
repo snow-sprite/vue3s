@@ -7,7 +7,7 @@ module.exports = {
   // markdown格式的原样输出，不限制最大长度
   proseWrap: "never",
   // 使用单引号
-  singleQuote: false,
+  singleQuote: true,
   // 使用tab还是空格缩进
   useTabs: false,
   // 缩进
