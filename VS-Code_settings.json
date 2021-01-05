@@ -1,0 +1,52 @@
+{
+  "editor.fontSize": 18,
+  "sync.gist": "f3d980ab1daed0b7e44337844089dd68",
+  "settingsSync.ignoredExtensions": [
+  ],
+  "todo-tree.tree.showScanModeButton": false,
+  "editor.tabSize": 2,
+  "window.zoomLevel": 1,
+  "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "vue"
+  ],
+  "auto-close-tag.activationOnLanguage": [
+
+      "xml",
+      "php",
+      "blade",
+      "ejs",
+      "jinja",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "plaintext",
+      "markdown",
+      "vue",
+      "liquid",
+      "erb",
+      "lang-cfml",
+      "cfml",
+      "HTML (EEx)",
+      "HTML (Eex)",
+      "plist"
+  ],
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  },
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "vetur.validation.template": false,
+  "vetur.format.enable": true,
+  "vetur.format.defaultFormatter.js": "none",
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "prettier.singleQuote": false,
+  "prettier.semi": true,
+  "prettier.trailingComma": "none",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+}
