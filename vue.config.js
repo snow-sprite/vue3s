@@ -63,10 +63,10 @@ module.exports = {
     loaderOptions: {
       scss: {
         // 全局引入公共样式
-        prependData: `@import "~@/assets/scss/variables.scss";`
+        prependData: '@import "~@/assets/scss/variables.scss";'
       },
       sass: {
-        prependData: `@import "~@/assets/scss/variables.scss"`
+        prependData: '@import "~@/assets/scss/variables.scss"'
       },
       less: {}
     }

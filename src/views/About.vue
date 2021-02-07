@@ -11,14 +11,9 @@
 import { Vue } from "vue-class-component";
 export default class About extends Vue {
   lis: Array<number> = [1, 2];
-  str = "hello, I am String.";
 
   addVal = (): void => {
     this.lis.push(~~(Math.random() * 9) + 1);
-  };
-
-  testSpaceBeforeFunction = function() {
-    console.log("test");
   };
 }
 </script>

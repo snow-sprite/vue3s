@@ -28,5 +28,7 @@ module.exports = {
   insertPragma: false,
   // 行尾换行格式
   endOfLine: "lf", // \n
+  // 函数名称或function关键字与开始参数之间是否有空格
+  spaceBeforeFunctionParen: false,
   HTMLWhitespaceSensitivity: "ignore"
 }

@@ -9,7 +9,7 @@ export default {
   setup() {
     const canvas = ref(null);
 
-    onMounted(_ => {
+    onMounted(() => {
       const writing = (beginX, beginY, stopX, stopY, ctx) => {
         ctx.beginPath(); // 开启一条新路径
         ctx.globalAlpha = 1; // 设置图片的透明度
