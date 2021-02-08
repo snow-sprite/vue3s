@@ -1,27 +1,11 @@
 <template>
+  <nav>
+    <!-- <span v-for="(nav, ind) in navs" class="tab">{{ nav }}</span> -->
+    <span v-for="(nav, ind) in navs" class="tab2">{{ nav }}</span>
+  </nav>
   <div id="nav">
     <router-link :to="{ name: 'Home' }">Home</router-link> |
     <router-link :to="{ name: 'About' }">About</router-link>
-    <fieldset>
-      <legend>
-        请打开控制台，查看原生滚动事件自增count与节流之后自增count值的差别
-      </legend>
-      <div style="text-align:left;">自定义指令：v-throttle</div>
-      <div
-        class="box"
-        v-throttle="changeNum"
-        v-watermark="{
-          text: message,
-          font: '48px',
-          color: 'rgba(0, 250, 154, .2)',
-          width: 150,
-          height: 150,
-          rotate: 30
-        }"
-      >
-        <span>count: {{ num }}</span>
-      </div>
-    </fieldset>
   </div>
   <router-view />
 </template>
@@ -29,13 +13,7 @@
 <script lang="ts">
 import { Vue } from "vue-class-component";
 export default class Index extends Vue {
-  num = 0;
-
-  message = "©Cid";
-
-  changeNum = () => {
-    ++this.num;
-  };
+  navs = ["是首页", "nav", "不限长导航", "导航", "awesome underline nav"];
 }
 </script>
 <style lang="scss">
@@ -59,12 +37,53 @@ export default class Index extends Vue {
     }
   }
 }
-.box {
-  margin: 0 auto;
-  height: 400px;
-  border: 2px dotted hotpink;
-  text-align: center;
-  line-height: 400px;
-  font-size: 30px;
+
+/**
+ * 从左边移入从左向右滑
+ * 从右边移入从右向左滑
+ * 除了第一个有bug，第一次移入是从右向左
+ */
+// .tab {
+//   position: relative;
+//   padding: 0 8px;
+//   &::before {
+//     content: "";
+//     width: 0;
+//     height: 100%;
+//     position: absolute;
+//     left: 100%;
+//     top: 0;
+//     border-bottom: 2px solid hotpink;
+//     transition: all 0.2s linear;
+//   }
+//   &:hover::before {
+//     width: 100%;
+//     left: 0;
+//   }
+//   &:hover ~ &::before {
+//     left: 0;
+//     width: 0;
+//   }
+// }
+
+/** 
+ * 不论鼠标从左边划入还是从右边划入，下划线一直是从左向右滑
+ */
+.tab2 {
+  position: relative;
+  padding: 0 8px;
+  &::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom: 2px solid hotpink;
+    transition: all 0.2s linear;
+  }
+  &:hover::before {
+    width: 100%;
+  }
 }
 </style>
