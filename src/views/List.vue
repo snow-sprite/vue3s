@@ -59,16 +59,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
 .wraper {
   width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  // 必要时折行
+  flex-wrap: wrap;
   li {
     list-style: none;
   }
   .card {
-    width: 260px;
     position: relative;
     left: 0;
     cursor: pointer;
@@ -100,6 +106,39 @@ export default {
         width: 100%;
         height: 160px;
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .wraper {
+    .card {
+      width: calc(100% - 20px);
+      margin-bottom: 10px;
+    }
+  }
+}
+@media (min-width: 600px) {
+  .wraper {
+    .card {
+      width: calc(50% - 20px);
+      margin-bottom: 10px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .wraper {
+    .card {
+      width: calc(33% - 20px);
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .wraper {
+    .card {
+      width: calc(25% - 20px);
     }
   }
 }
