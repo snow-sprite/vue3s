@@ -98,6 +98,7 @@ export default {
       padding-top: 10px;
       display: flex;
       justify-content: space-around;
+      flex-wrap: wrap;
       color: cadetblue;
     }
     .thumb {
@@ -113,8 +114,8 @@ export default {
 @media (max-width: 600px) {
   .wraper {
     .card {
-      width: calc(100% - 20px);
-      margin-bottom: 10px;
+      width: calc(80% - 20px);
+      margin: 0 auto 10px;
     }
   }
 }
