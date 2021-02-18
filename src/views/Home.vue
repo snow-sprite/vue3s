@@ -47,14 +47,18 @@
       </div>
     </fieldset>
     <HelloWorld :msg="msg" />
-    <h3>是否进入视图区域1.</h3>
+    <h1>是否进入视图区域1.</h1>
     <div class="content">
       <img v-for="(img, ind) in imgs" :key="ind" :src="img" alt="" />
     </div>
     <hr />
-    <h3>是否进入视图区域2.</h3>
+    <h1>是否进入视图区域2.</h1>
     <div class="content2">
       <img v-for="(img, ind) in imgs2" :key="ind" :src="img" alt="" />
+    </div>
+    <h1>是否进入视图区域3.</h1>
+    <div class="content3">
+      <img v-for="(img, ind) in imgs3" :key="ind" :src="img" alt="" />
     </div>
   </div>
 </template>
@@ -102,6 +106,16 @@ export default class Home extends Vue {
     "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
   ];
 
+  imgs3 = [
+    "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
+    "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
+    "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
+    "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
+    "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
+    "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
+    "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
+  ];
+
   changeNum = () => {
     ++this.num;
   };
@@ -134,6 +148,8 @@ export default class Home extends Vue {
   imgDoms = [];
 
   imgDoms2 = [];
+
+  imgDoms3 = [];
 
   // 监测视图是否进入可视区域1
   isScrollIntoView = () => {
@@ -180,6 +196,17 @@ export default class Home extends Vue {
     });
   }
 
+  // 检测3
+  detect3() {
+    this.imgDoms3.forEach((imgDom: Element) => {
+      if (this.isScrollIntoView2(imgDom)) {
+        imgDom.className = "fade-in";
+      } else {
+        imgDom.className = "fade-out";
+      }
+    });
+  }
+
   // 节流函数
   throttle = (cb: Function, delay: number) => {
     let pre = 0;
@@ -202,6 +229,7 @@ export default class Home extends Vue {
     console.log("---lifeCircle---mounted---");
     this.imgDoms = Array.from(document.querySelectorAll(".content img"));
     this.imgDoms2 = Array.from(document.querySelectorAll(".content2 img"));
+    this.imgDoms3 = Array.from(document.querySelectorAll(".content3 img"));
     // 监听滚动事件1
     window.addEventListener(
       "scroll",
@@ -212,6 +240,11 @@ export default class Home extends Vue {
     this.detect();
     // 监听滚动事件2
     window.addEventListener("scroll", this.throttle(this.detect, 100));
+
+    // 默认先执行一次
+    this.detect3();
+    // 监听滚动事件2
+    window.addEventListener("scroll", this.throttle(this.detect3, 100));
   }
 
   changeText() {
@@ -245,7 +278,9 @@ export default class Home extends Vue {
     background: cyan;
   }
 }
-.content {
+.content,
+.content2,
+.content3 {
   width: 80%;
   margin: 20px auto 200px;
   img {
@@ -263,24 +298,24 @@ export default class Home extends Vue {
     transform-origin: center;
     transition: transform 0.4s ease-out;
   }
+  .fade-in {
+    opacity: 1;
+    transform-origin: center;
+    transition: all 0.4s linear;
+  }
+  .fade-out {
+    opacity: 0;
+    transform-origin: center;
+    transition: all 0.4s linear;
+  }
 }
-.content2 {
-  width: 80%;
+.content2,
+.content3 {
   margin: 20px auto 1200px;
+}
+.content3 {
   img {
-    width: 100%;
-    height: 100%;
-    transform: scale(0.8);
-  }
-  .in-view {
     transform: scale(1);
-    transform-origin: center;
-    transition: transform 0.4s ease-in;
-  }
-  .out-view {
-    transform: scale(0.8);
-    transform-origin: center;
-    transition: transform 0.4s ease-out;
   }
 }
 .box {
