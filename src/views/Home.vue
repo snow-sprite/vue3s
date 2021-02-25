@@ -166,7 +166,7 @@ export default class Home extends Vue {
 
     let recTop = imgRec.top;
 
-    let recBottom = recTop + offsetHeight;
+    let recBottom = imgRec.bottom;
 
     /**
      * 已显示的向上滚动超过当前dom的4/5缩小
