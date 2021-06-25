@@ -24,7 +24,8 @@
       ],
       "assets/*": [
         "src/assets/*"
-      ]
+      ],
+      "@icon": ["src/assets/svgs"]
     },
     "lib": [
       "esnext",

@@ -3,3 +3,9 @@ declare module "*.vue" {
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }
+
+declare module "@icon/*" {
+  import { ReactSvgIconFC } from "@yzfe/react-svgicon"
+  const value: ReactSvgIconFC
+  export = value
+}

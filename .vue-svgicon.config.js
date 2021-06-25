@@ -9,5 +9,7 @@ module.exports = {
     pathAlias: {
         '@icon': svgFilePaths[0]
     },
-    transformAssetUrls: {},
+    transformAssetUrls: {
+        [tagName]: ['data']
+    },
 }
