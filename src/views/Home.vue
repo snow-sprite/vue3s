@@ -4,6 +4,7 @@
     <button v-debounce="changeText">
       debounce - 点击
     </button>
+    <p>{{ msg }}</p>
     <p></p>
     <h1>
       <span v-show="isShow">哈哈~ ^_^</span
@@ -64,8 +65,8 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import { Options, Vue } from 'vue-class-component'
+import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 
 @Options({
   components: {
@@ -73,100 +74,100 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
   }
 })
 export default class Home extends Vue {
-  msg = "传递给子组件的信息";
+  msg = '传递给子组件的信息'
 
-  isShow = false;
+  isShow = false
 
-  num = 0;
+  num = 0
 
-  message = "©Cid";
+  message = '©Cid'
 
   // 定时器
-  timer = 0;
+  timer = 0
 
-  lis = ["长按打印1", "长按打印2", "长按打印3"];
+  lis = ['长按打印1', '长按打印2', '长按打印3']
 
   imgs = [
-    "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
-    "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
-    "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
-    "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
-    "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
-    "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
-    "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
-  ];
+    'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+    'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+    'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+    'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+    'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
+    'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
+    'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg'
+  ]
 
   imgs2 = [
-    "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
-    "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
-    "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
-    "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
-    "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
-    "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
-    "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
-  ];
+    'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+    'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+    'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+    'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+    'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
+    'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
+    'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg'
+  ]
 
   imgs3 = [
-    "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
-    "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
-    "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
-    "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
-    "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
-    "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
-    "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
-  ];
+    'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+    'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+    'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+    'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+    'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
+    'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
+    'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg'
+  ]
 
   changeNum = () => {
-    ++this.num;
-  };
+    ++this.num
+  }
 
   liFn(li: number) {
-    console.log(li);
+    console.log(li)
   }
 
   longFn = () => {
-    this.isShow = !this.isShow;
-  };
+    this.isShow = !this.isShow
+  }
 
   // 监测对象
   interOb = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.intersectionRatio > 0) {
         setTimeout(() => {
-          entry.target["classList"].add("in-view");
-          entry.target["classList"].remove("out-view");
-        }, 100);
+          entry.target['classList'].add('in-view')
+          entry.target['classList'].remove('out-view')
+        }, 100)
       } else {
         setTimeout(() => {
-          entry.target["classList"].remove("in-view");
-          entry.target["classList"].add("out-view");
-        }, 100);
+          entry.target['classList'].remove('in-view')
+          entry.target['classList'].add('out-view')
+        }, 100)
       }
-    });
-  });
+    })
+  })
 
-  imgDoms = [];
+  imgDoms = []
 
-  imgDoms2 = [];
+  imgDoms2 = []
 
-  imgDoms3 = [];
+  imgDoms3 = []
 
   // 监测视图是否进入可视区域1
   isScrollIntoView = () => {
     this.imgDoms.forEach(img => {
-      this.interOb.observe(img);
-    });
-  };
+      this.interOb.observe(img)
+    })
+  }
   // 视图是否进入可视区域2
-  isScrollIntoView2(el: Element): Boolean {
-    let imgRec = el.getBoundingClientRect();
-    let offsetY = window.pageYOffset;
-    let innerHeight = window.innerHeight;
-    let offsetHeight = el["offsetHeight"];
+  isScrollIntoView2(el: Element): boolean {
+    const imgRec = el.getBoundingClientRect()
+    const offsetY = window.pageYOffset
+    const innerHeight = window.innerHeight
+    const offsetHeight = el['offsetHeight']
 
-    let recTop = imgRec.top;
+    const recTop = imgRec.top
 
-    let recBottom = imgRec.bottom;
+    const recBottom = imgRec.bottom
 
     /**
      * 已显示的向上滚动超过当前dom的4/5缩小
@@ -180,76 +181,73 @@ export default class Home extends Vue {
       recTop > -((offsetHeight / 5) * 4) &&
       recTop < innerHeight - offsetHeight / 5
     ) {
-      return true;
+      return true
     } else {
-      return false;
+      return false
     }
   }
   // 监测
   detect() {
     this.imgDoms2.forEach((imgDom: Element) => {
       if (this.isScrollIntoView2(imgDom)) {
-        imgDom.className = "in-view";
+        imgDom.className = 'in-view'
       } else {
-        imgDom.className = "out-view";
+        imgDom.className = 'out-view'
       }
-    });
+    })
   }
 
   // 检测3
   detect3() {
     this.imgDoms3.forEach((imgDom: Element) => {
       if (this.isScrollIntoView2(imgDom)) {
-        imgDom.className = "fade-in";
+        imgDom.className = 'fade-in'
       } else {
-        imgDom.className = "fade-out";
+        imgDom.className = 'fade-out'
       }
-    });
+    })
   }
 
   // 节流函数
   throttle = (cb: Function, delay: number) => {
-    let pre = 0;
+    let pre = 0
     return () => {
-      let now = +Date.now();
+      const now = +Date.now()
       if (now - pre < delay) {
-        clearTimeout(this.timer);
+        clearTimeout(this.timer)
         this.timer = setTimeout(() => {
-          cb();
-          pre = now;
-        }, delay);
+          cb()
+          pre = now
+        }, delay)
       } else {
-        cb();
-        pre = now;
+        cb()
+        pre = now
       }
-    };
-  };
+    }
+  }
 
   mounted() {
-    console.log("---lifeCircle---mounted---");
-    this.imgDoms = Array.from(document.querySelectorAll(".content img"));
-    this.imgDoms2 = Array.from(document.querySelectorAll(".content2 img"));
-    this.imgDoms3 = Array.from(document.querySelectorAll(".content3 img"));
+    console.log('---lifeCircle---mounted---')
+    this.imgDoms = Array.from(document.querySelectorAll('.content img'))
+    this.imgDoms2 = Array.from(document.querySelectorAll('.content2 img'))
+    this.imgDoms3 = Array.from(document.querySelectorAll('.content3 img'))
     // 监听滚动事件1
-    window.addEventListener(
-      "scroll",
-      this.throttle(this.isScrollIntoView, 100)
-    );
+    window.addEventListener('scroll', this.throttle(this.isScrollIntoView, 100))
 
     // 默认先执行一次
-    this.detect();
+    this.detect()
     // 监听滚动事件2
-    window.addEventListener("scroll", this.throttle(this.detect, 100));
+    window.addEventListener('scroll', this.throttle(this.detect, 100))
 
     // 默认先执行一次
-    this.detect3();
+    this.detect3()
     // 监听滚动事件2
-    window.addEventListener("scroll", this.throttle(this.detect3, 100));
+    window.addEventListener('scroll', this.throttle(this.detect3, 100))
   }
 
   changeText() {
-    let mathNumber = (~~(Math.random() * 99 + 1)).toString();
-    this.msg = `${this.msg}_${mathNumber}`;
+    const mathNumber = (~~(Math.random() * 99 + 1)).toString()
+    this.msg = `${this.msg}_${mathNumber}`
   }
 }
 </script>

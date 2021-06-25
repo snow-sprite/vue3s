@@ -2,18 +2,20 @@
  * 配置参考：https://prettier.io/docs/en/options.html#print-width
  */
 module.exports = {
+  // 开启eslint支持
+  eslintIntegration: true,
   // 最大字符长度
   printWidth: 80,
   // markdown格式的原样输出，不限制最大长度
   proseWrap: "never",
   // 使用单引号
-  singleQuote: false,
+  singleQuote: true,
   // 使用tab还是空格缩进
   useTabs: false,
   // 缩进
   tabWidth: 2,
   // 行末分号
-  semi: true,
+  semi: false,
   // JSX也使用单引号
   jsxSingleQuote: false,
   // 不尾随逗号

@@ -1,11 +1,11 @@
-import { VNode, DirectiveBinding } from "vue";
+import { VNode, DirectiveBinding } from 'vue'
 
 export default {
   mounted(el: HTMLElement, binding: DirectiveBinding, vnode: VNode) {
     if (typeof binding.value !== 'function') {
-      throw new Error("v-longPress: Error Type!(Must be a Function.)")
+      throw new Error('v-longPress: Error Type!(Must be a Function.)')
     }
-    
+
     el['timer'] = null
     // 启动事件
     el['start'] = (e: MouseEvent | TouchEvent) => {
@@ -17,7 +17,7 @@ export default {
     }
 
     // 取消事件
-    el['cancel']  = () => {
+    el['cancel'] = () => {
       clearTimeout(el['timer'])
       el['timer'] = null
     }
@@ -37,7 +37,7 @@ export default {
     el.addEventListener('touchend', el['cancel'])
     el.addEventListener('touchcancel', el['cancel'])
   },
-  updated(el: HTMLElement) { },
+  updated(el: HTMLElement) {},
   unMounted(el: HTMLElement) {
     el.removeEventListener('mousedown', el['start'])
     el.removeEventListener('touchstart', el['start'])

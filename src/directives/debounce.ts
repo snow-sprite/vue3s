@@ -1,7 +1,7 @@
 export default {
   mounted(el: HTMLElement, { value }: { value: Function }) {
     if (typeof value !== 'function') {
-      throw new Error("v-debounce: Error Type!(Must be a Function.)");
+      throw new Error('v-debounce: Error Type!(Must be a Function.)')
     }
 
     el['timer'] = null
@@ -17,7 +17,7 @@ export default {
 
     el.addEventListener('click', el['start'])
   },
-  updated() { },
+  updated() {},
   beforeUnmount(el: HTMLElement) {
     el.removeEventListener('click', el['start'])
 

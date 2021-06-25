@@ -6,13 +6,13 @@ module.exports = {
    * - production: http://xx.xx.xx.xx:8080/prod/
    */
 
-  publicPath: process.env.NODE_ENV == "production" ? "/prod" : "/develop-zhou",
+  publicPath: process.env.NODE_ENV == 'production' ? '/prod' : '/develop-zhou',
   // default: 'dist'
-  outputDir: "dist",
+  outputDir: 'dist',
   // default: ''
-  assetsDir: "static",
+  assetsDir: 'static',
   // default: 'index.html'
-  indexPath: "index.html",
+  indexPath: 'index.html',
   // default: true （要求index.html是被Vue CLI自动生成的）
   filenameHashing: true,
   // default: undefined Type: Object
@@ -26,7 +26,7 @@ module.exports = {
    * true: 保存代码时会检查代码格式，并在控制台显示eslint错误
    * false: 保存代码时不会检查代码格式，不会在控制台显示eslint错误
    */
-  lintOnSave: process.env.NODE_ENV !== "production",
+  lintOnSave: process.env.NODE_ENV !== 'production',
   // default: false
   // 需要编译器{runtimeCompiler: true}
   // new Vue({
@@ -56,7 +56,7 @@ module.exports = {
     requireModuleExtension: true,
     // 是否主动将组件中的css提取到一个独立的css文件
     // default: 生产环境true，开发环境false
-    extract: process.env.NODE_ENV == "production" ? true : false,
+    extract: process.env.NODE_ENV == 'production' ? true : false,
     // default: false 开启为true可能影响性能
     sourceMap: false,
     // > 我们默认开启了 autoprefixer。# https://cli.vuejs.org/zh/guide/css.html#postcss
@@ -76,10 +76,10 @@ module.exports = {
     port: 8090,
     open: true,
     proxy: {
-      "/api": {
-        target: "http://localhost:3000",
+      '/api': {
+        target: 'http://localhost:3000',
         pathRewrite: {
-          "^/api": ""
+          '^/api': ''
         },
         secure: false // 可在htps上且使用了无效证书的后端服务器上运行
       }
@@ -90,21 +90,21 @@ module.exports = {
   // parallel: require('os').cups().length > 1,
   // 渐进式web应用
   pwa: {
-    themeColor: "pink",
-    msTileColor: "yellowgreen",
-    appleMobileWebAppCapable: "no",
-    appleMobileWebAppStatusBarStyle: "default",
-    assetsVersion: "9.9.9",
-    manifestPath: "manifest.json",
+    themeColor: 'pink',
+    msTileColor: 'yellowgreen',
+    appleMobileWebAppCapable: 'no',
+    appleMobileWebAppStatusBarStyle: 'default',
+    assetsVersion: '9.9.9',
+    manifestPath: 'manifest.json',
     manifestOptions: {},
     iconPaths: {
-      favicon32: "",
-      favicon16: "",
-      appleTouchIcon: "",
-      maskIcon: "",
-      msTileImage: ""
+      favicon32: '',
+      favicon16: '',
+      appleTouchIcon: '',
+      maskIcon: '',
+      msTileImage: ''
     }
   },
   // 插件
   pluginOptions: {}
-};
+}

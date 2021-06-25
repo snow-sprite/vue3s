@@ -1,20 +1,21 @@
 <template>
   <nav>
     <!-- <span v-for="(nav, ind) in navs" class="tab">{{ nav }}</span> -->
-    <span v-for="(nav, ind) in navs" class="tab2">{{ nav }}</span>
+    <span v-for="(nav, ind) in navs" :key="ind" class="tab2">{{ nav }}</span>
   </nav>
   <div id="nav">
     <router-link :to="{ name: 'Home' }">Home</router-link> |
     <router-link :to="{ name: 'Cards' }">Cards</router-link> |
-    <router-link :to="{ name: 'About' }">About</router-link>
+    <router-link :to="{ name: 'About' }">About</router-link> |
+    <router-link :to="{ name: 'SvgIcon' }">SvgIcon</router-link>
   </div>
   <router-view />
 </template>
 
 <script lang="ts">
-import { Vue } from "vue-class-component";
+import { Vue } from 'vue-class-component'
 export default class Index extends Vue {
-  navs = ["是首页", "nav", "不限长导航", "导航", "awesome underline nav"];
+  navs = ['是首页', 'nav', '不限长导航', '导航', 'awesome underline nav']
 }
 </script>
 <style lang="scss">
@@ -74,7 +75,7 @@ export default class Index extends Vue {
   position: relative;
   padding: 0 8px;
   &::before {
-    content: "";
+    content: '';
     width: 0;
     height: 100%;
     position: absolute;

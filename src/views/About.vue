@@ -8,18 +8,18 @@
   </div>
 </template>
 <script lang="ts">
-import { Vue } from "vue-class-component";
+import { Vue } from 'vue-class-component'
 export default class About extends Vue {
-  lis: Array<number> = [1, 2];
+  lis: Array<number> = [1, 2]
 
   addVal = (): void => {
-    this.lis.push(~~(Math.random() * 9) + 1);
-  };
+    this.lis.push(~~(Math.random() * 9) + 1)
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/about.scss";
+@import '@/assets/scss/about.scss';
 
 $color: $hotPink;
 li {

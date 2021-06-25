@@ -20,46 +20,46 @@
 
 <script>
 export default {
-  name: "Cards",
+  name: 'Cards',
   data() {
     return {
       list: [
         {
-          name: "山",
-          desc: "五A级景区",
-          rate: "⭐⭐⭐⭐⭐",
+          name: '山',
+          desc: '五A级景区',
+          rate: '⭐⭐⭐⭐⭐',
           thumb:
-            "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg",
-          sing: "happy new year"
+            'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
+          sing: 'happy new year'
         },
         {
-          name: "小鸟",
-          desc: "小鸟说“早早早”",
-          rate: "⭐⭐⭐⭐",
+          name: '小鸟',
+          desc: '小鸟说“早早早”',
+          rate: '⭐⭐⭐⭐',
           thumb:
-            "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
-          sing: "happy new year"
+            'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+          sing: 'happy new year'
         },
         {
-          name: "小鹿",
-          desc: "小鹿抬头",
-          rate: "⭐⭐⭐",
+          name: '小鹿',
+          desc: '小鹿抬头',
+          rate: '⭐⭐⭐',
           thumb:
-            "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
-          sing: "happy new year"
+            'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+          sing: 'happy new year'
         },
         {
-          name: "小马",
-          desc: "三月马儿吃草",
-          rate: "⭐⭐⭐⭐⭐",
+          name: '小马',
+          desc: '三月马儿吃草',
+          rate: '⭐⭐⭐⭐⭐',
           thumb:
-            "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
-          sing: "happy new year"
+            'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+          sing: 'happy new year'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
